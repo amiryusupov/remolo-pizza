@@ -1,0 +1,136 @@
+.basket {
+    width: 630px;
+    height: 100vh;
+    background-color: $sidebar-bg;
+    @media screen and (max-width: 1440px) {
+        display: none;
+    }
+    &__row {
+        @include flex(flex-start, flex-start, column);
+        width: 100%;
+        height: 100vh;
+        padding: 33px 24px 21px 24px;
+        
+        .basket__title {
+            @include font(26, 26, 700, 30px);
+            color: $black-color;
+            margin-bottom: 35px
+        }
+        .basket__products {
+            @include flex(center, center, column);
+            width: 100%;
+            &-desc {
+                width: 100%;
+                @include flex(center, space-between, row);
+                &-text {
+                    @include flex(flex-start, center, column);
+                    margin-bottom: 35px;
+                    &1 {
+                        @include font(20, 20, 600, 30px);
+                        color: $black-color;
+                    }
+                    &2 {
+                        @include font(16, 16, 500, 24px);
+                        color: $gray-color;
+                    }
+                }
+                &-img {
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+            &-items {
+                width: 100%;
+                @include flex(flex-start, center, column);
+                .basket__products-item {
+                    width: 100%;
+                    @include flex(flex-start, space-between, row);
+                    border-radius: 16px;
+                    background-color: $white-color;
+                    padding: 12px 18px 12px 12px;
+                    &:not(:last-child) {
+                        margin-bottom: 25px;
+                    }
+                    &-img {
+                        width: 110px;
+                        height: 110px;
+                        border-radius: 16px;
+                        object-fit: cover;
+                    }
+                    &-text {
+                        @include flex(flex-start, center, column);
+                       .basket__products-item-span {
+                           @include flex(flex-start, center, column);
+                           margin-bottom: 27px;
+                           .basket__products-item-name {
+                                @include font(16, 16, 500, 24px);
+                                color: $gray-color;
+                            }
+                            .basket__products-item-price {
+                                @include font(16, 16, 500, 24px);
+                                color: $gray-btn-color
+                            }
+                        }
+                        .basket__products-item-quantity {
+                            @include flex(center, space-between, row);
+                            border-radius: 9px;
+                            background-color: $btn-bg-color;
+                            width: 80px;
+                            height: 35px;
+                            button {
+                                border: none;
+                                background-color: transparent;
+                                padding: 7px 10px;
+                                transition: all 0.3s;
+                                border-radius: 9px;
+                                &:hover {
+                                    background-color: $gray-plus-color;
+                                }
+                            }
+                        }
+                    }
+                    &-remove {
+                        padding: 12px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .basket__order {
+            height: 100%;
+            width: 100%;
+            @include flex(center, flex-end, column);
+
+            &-price {
+                width: 100%;
+                @include flex(center, center, column);
+                &-text {
+                    width: 100%;
+                    @include flex(center, space-between, row);
+                    &:not(:last-child) {
+                        margin-bottom: 5px
+                    }
+                    &1 {
+                        @include font(16, 16, 600, 21px);
+                        color: $gray-btn-color;
+                    }
+                    &2 {
+                        @include font(18, 18, 700, 24px);
+                        color: $dark-black-color;
+                    }
+                }
+            }
+            &-submit {
+                @include flex(center, center, unset);
+                width: 581px;
+                height: 60px;
+                border-radius: 50px;
+                margin-top: 20px;
+                cursor: pointer;
+                color: $white-color;
+                background-color: $order-bg-color;
+            }
+        }
+    }
+}

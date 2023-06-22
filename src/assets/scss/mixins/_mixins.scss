@@ -1,0 +1,35 @@
+@mixin flex($alignItem: center, $justifyContent: center, $direction: row) {
+  display: flex;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+  flex-direction: $direction;
+}
+
+@mixin font($size, $min_size, $weight, $height) {
+  @include adaptive-value("font-size", $size, $min_size, 1);
+  font-weight: $weight;
+  line-height: $height;
+}
+
+$maxWidth: 1920;
+$maxWidthContainer: 1440;
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width:#{$maxWidthContainer + px}) {
+    #{$property}: calc(
+      #{$minSize + px} + #{$addSize} *
+        ((100vw - 320px) / #{$maxWidthContainer - 320})
+    );
+  }
+}
+
+@mixin flex-center {
+  @include flex();
+}
+
+@mixin media($width) {
+  @media only screen and (max-width: #{$width + px}) {
+    @content;
+  }
+}

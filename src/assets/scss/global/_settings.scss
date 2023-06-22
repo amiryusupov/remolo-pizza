@@ -1,0 +1,42 @@
+// body.open-modal,
+// body.modal-wrap-active {
+//   height: 100vh;
+//   overflow: hidden;
+
+//   @include mediaMobileFirst(700) {
+//     padding-right: 10px;
+//   }
+// }
+
+body {
+  background-color: #fafafd;
+}
+
+// body.show {
+//   height: 100vh;
+//   overflow: hidden;
+
+//   @include mediaMobileFirst(700) {
+//     padding-right: 10px;
+//   }
+// }
+
+button span {
+  pointer-events: none;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+
+  &.show {
+    height: 100vh;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
