@@ -42,6 +42,8 @@
             }
             &-items {
                 width: 100%;
+                height: 100%;
+                overflow: scroll;
                 @include flex(flex-start, center, column);
                 .basket__products-item {
                     width: 100%;
@@ -93,6 +95,17 @@
                     &-remove {
                         padding: 12px;
                         cursor: pointer;
+                        border-radius: 50px;
+                        transition: all 0.3s;
+                        svg path {
+                            transition: all 0.3s;
+                        }
+                        &:hover {
+                            background-color: $gray-plus-color;
+                            svg path {
+                                fill: $red-color;
+                            }
+                        }
                     }
                 }
             }
@@ -123,7 +136,7 @@
             }
             &-submit {
                 @include flex(center, center, unset);
-                width: 581px;
+                width: 100%;
                 height: 60px;
                 border-radius: 50px;
                 margin-top: 20px;

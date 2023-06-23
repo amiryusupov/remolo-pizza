@@ -3,6 +3,12 @@ import del_img from "../../assets/images/icons/delete.svg";
 import Product from "./Product.jsx";
 
 function Basket({cartProducts}) {
+  const productPrice = cartProducts.map(item => item.price)
+  const totalPrice = () => {
+    const newProductPrices = [...productPrice];
+    const newTotal = newProductPrices.reduce((sum, price) => sum + price, 0);
+    return newTotal
+  };
   return (
     <div className="basket">
       <div className="basket__row">
@@ -13,7 +19,7 @@ function Basket({cartProducts}) {
               <span className="basket__products-desc-text1">
                 Listado del pedido
               </span>
-              <span className="basket__products-desc-text2">4 Items</span>
+              <span className="basket__products-desc-text2">{cartProducts.length} Items</span>
             </div>
             <img
               src={del_img}
@@ -31,7 +37,7 @@ function Basket({cartProducts}) {
             </div>
             <div className="basket__order-price-text">
               <span className="basket__order-price-text1">Items totales</span>
-              <span className="basket__order-price-text2">$ 1650.00</span>
+              <span className="basket__order-price-text2">$ {`${totalPrice()}`}.00</span>
             </div>
           </div>
           <span className="basket__order-submit">Ir al checkout</span>

@@ -1,7 +1,7 @@
 import React from "react";
-import remove from "../../assets/images/icons/remove.svg";
 import { store } from "../../redux/store";
 import { delCartAc } from "../../redux/actions/cartAction";
+import RemoveIcon from "../../assets/images/icons/remove";
 
 function Product({ products }) {
   const handleCartItemDel = (id) => {
@@ -33,11 +33,9 @@ function Product({ products }) {
                 <button>+</button>
               </div>
             </div>
-            <img
-              src={remove}
-              onClick={() => handleCartItemDel(item.id)}
-              className="basket__products-item-remove"
-            />
+            <div className="basket__products-item-remove" onClick={() => handleCartItemDel(item.id)}>
+              <RemoveIcon />
+            </div>
           </div>
         );
       })}
