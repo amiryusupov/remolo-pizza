@@ -5,7 +5,7 @@ import MainCategory from "./MainCategory";
 import burger__menu from "../../assets/images/icons/burger_menu.svg";
 
 function Main({ store }) {
-  const { categories, product } = store.getState();
+  const { categories, product } = store;
   return (
     <div className="main">
       <div className="main-row">

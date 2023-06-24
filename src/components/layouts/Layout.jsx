@@ -3,7 +3,7 @@ import Main from "../main";
 import Sidebar from "../sidebar/index";
 
 export const Layout = ({store}) => {
-  const {cart} = store.getState()
+  const {cart} = store
   return (
     <div className="wrapper">
       <div className="main-layout__row">

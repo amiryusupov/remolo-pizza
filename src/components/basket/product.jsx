@@ -1,13 +1,18 @@
 import React from "react";
 import { store } from "../../redux/store";
-import { delCartAc } from "../../redux/actions/cartAction";
+import { decreaseCartAc, delCartAc, increaseCartAc } from "../../redux/actions/cartAction";
 import RemoveIcon from "../../assets/images/icons/remove";
 
 function Product({ products }) {
   const handleCartItemDel = (id) => {
     store.dispatch(delCartAc({ id }));
   };
-
+  const handleIncrease = (id) => {
+    store.dispatch(increaseCartAc({id}))
+  }
+  const handleDecrease = (id) => {
+    store.dispatch(decreaseCartAc({id}))
+  }
   console.log(products);
 
   return (
@@ -24,13 +29,13 @@ function Product({ products }) {
               <div className="basket__products-item-span">
                 <span className="basket__products-item-name">{item.name}</span>
                 <span className="basket__products-item-price">
-                  $ {item.price}
+                  $ {item.price * item.qty}
                 </span>
               </div>
               <div className="basket__products-item-quantity">
-                <button>-</button>
-                <span>{item.quantity}</span>
-                <button>+</button>
+                <button onClick={() => handleDecrease(item.id)}>-</button>
+                <span>{item.qty}</span>
+                <button onClick={() => handleIncrease(item.id)}>+</button>
               </div>
             </div>
             <div className="basket__products-item-remove" onClick={() => handleCartItemDel(item.id)}>

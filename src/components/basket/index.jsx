@@ -3,12 +3,13 @@ import del_img from "../../assets/images/icons/delete.svg";
 import Product from "./Product.jsx";
 
 function Basket({cartProducts}) {
-  const productPrice = cartProducts.map(item => item.price)
+  const productPrice = cartProducts.map(item => item.price * item.qty)
   const totalPrice = () => {
     const newProductPrices = [...productPrice];
     const newTotal = newProductPrices.reduce((sum, price) => sum + price, 0);
     return newTotal
   };
+  console.log(productPrice);
   return (
     <div className="basket">
       <div className="basket__row">
