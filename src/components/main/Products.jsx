@@ -2,9 +2,10 @@ import React from 'react'
 import { setCartAc } from '../../redux/actions/cartAction';
 import { useDispatch } from 'react-redux';
 
-function Products({ product, store }) {
+function Products({ product }) {
+    const dispatch = useDispatch()
     const handleCartBtn = (product) => {
-        store.useDispatch(setCartAc({ product }))
+        dispatch(setCartAc({ product }))
     }
     return (
         <div className="main__products">

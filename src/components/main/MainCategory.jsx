@@ -1,8 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 
-function MainCategory({categoriesData, store, activeCategory}) {
+function MainCategory({categoriesData, activeCategory}) {
+  const dispatch = useDispatch()
   const handleCategoryChange = (name) => {
-    store.setActiveCategory(name);
+    dispatch({
+      type: "setActiveCategory",
+      payload: {categoryName: name}
+    })
   }
   return (
     <div className="main__category">

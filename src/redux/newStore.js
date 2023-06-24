@@ -9,6 +9,6 @@ const reducers = combineReducers({
     products: ProductsReducer,
     cart: CartReducer
 })
-const store = createStore(reducers)
+const newStore = createStore(reducers)
 
-export default store;
+export default newStore;

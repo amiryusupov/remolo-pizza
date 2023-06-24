@@ -3,9 +3,12 @@ import search from "../../assets/images/icons/search.svg";
 import Products from "./Products";
 import MainCategory from "./MainCategory";
 import burger__menu from "../../assets/images/icons/burger_menu.svg";
+import { useSelector } from "react-redux";
 
-function Main({ store }) {
-  const { categories, product } = store;
+function Main() {
+
+  const { categories, products } = useSelector(state => state);
+  console.log(products);
   return (
     <div className="main">
       <div className="main-row">
@@ -24,15 +27,13 @@ function Main({ store }) {
           </span>
         </div>
         <MainCategory
-          store={store}
           categoriesData={categories.items}
           activeCategory={categories.activeCategory}
         />
         <Products
-          product={product.items.filter(
+          product={products.items.filter(
             (item) => item.category === categories.activeCategory
           )}
-          store={store}
         />
       </div>
     </div>

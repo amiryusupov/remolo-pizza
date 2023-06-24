@@ -17,7 +17,7 @@ function Product({ products }) {
 
   return (
     <div className="basket__products-items">
-      {products.map((item) => {
+      {products.items.map((item) => {
         return (
           <div className="basket__products-item" key={item.id}>
             <img
