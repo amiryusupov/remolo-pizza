@@ -1,19 +1,19 @@
 import React from "react";
-import { store } from "../../redux/store";
 import { decreaseCartAc, delCartAc, increaseCartAc } from "../../redux/actions/cartAction";
 import RemoveIcon from "../../assets/images/icons/remove";
+import { useDispatch } from "react-redux";
 
 function Product({ products }) {
+  const dispatch = useDispatch()
   const handleCartItemDel = (id) => {
-    store.dispatch(delCartAc({ id }));
+    dispatch(delCartAc({ id }));
   };
   const handleIncrease = (id) => {
-    store.dispatch(increaseCartAc({id}))
+    dispatch(increaseCartAc({id}))
   }
   const handleDecrease = (id) => {
-    store.dispatch(decreaseCartAc({id}))
+    dispatch(decreaseCartAc({id}))
   }
-  console.log(products);
 
   return (
     <div className="basket__products-items">

@@ -8,9 +8,9 @@ const initialState = {
 function CategoriesReducer(state = initialState, action) {
     const {type, payload} = action
     if(type === "setActiveCategory") {
-        state.activeCategory = payload.categryName
+        state.activeCategory = payload.categoryName
     }
     return state
 }
 
-export default CategoriesReducer
+export default CategoriesReducer;

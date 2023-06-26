@@ -11,7 +11,6 @@ function Basket() {
     const newTotal = newProductPrices.reduce((sum, price) => sum + price, 0);
     return newTotal
   };
-  console.log(productPrice);
   return (
     <div className="basket">
       <div className="basket__row">

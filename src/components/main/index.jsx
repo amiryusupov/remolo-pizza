@@ -6,9 +6,7 @@ import burger__menu from "../../assets/images/icons/burger_menu.svg";
 import { useSelector } from "react-redux";
 
 function Main() {
-
-  const { categories, products } = useSelector(state => state);
-  console.log(products);
+  const { categories, products } = useSelector((state) => state);
   return (
     <div className="main">
       <div className="main-row">
@@ -23,7 +21,7 @@ function Main() {
         <div className="main__title">
           <span className="main__title-text1">Categorias</span>
           <span className="main__title-text2">
-            Elige nuestras deliciosas pizzas{" "}
+            Elige nuestras deliciosas pizzas
           </span>
         </div>
         <MainCategory
