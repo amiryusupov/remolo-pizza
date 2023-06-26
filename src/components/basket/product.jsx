@@ -1,18 +1,18 @@
 import React from "react";
-import { decreaseCartAc, delCartAc, increaseCartAc } from "../../redux/actions/cartAction";
 import RemoveIcon from "../../assets/images/icons/remove";
 import { useDispatch } from "react-redux";
+import { decreaseQty, deleteCart, increaseQty } from "../../redux/slices/cartSlice";
 
 function Product({ products }) {
   const dispatch = useDispatch()
   const handleCartItemDel = (id) => {
-    dispatch(delCartAc({ id }));
+    dispatch(deleteCart({ id }));
   };
   const handleIncrease = (id) => {
-    dispatch(increaseCartAc({id}))
+    dispatch(increaseQty({id}))
   }
   const handleDecrease = (id) => {
-    dispatch(decreaseCartAc({id}))
+    dispatch(decreaseQty({id}))
   }
 
   return (

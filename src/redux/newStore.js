@@ -1,13 +1,13 @@
-import {combineReducers, legacy_createStore as createStore} from "redux"
-import CategoriesReducer from "./reducers/categoriesReducer"
-import ProductsReducer from "./reducers/productsReducer"
-import CartReducer from "./reducers/cartReducer"
+import {combineReducers} from "redux"
+import categoriesSlice from "./slices/categoriesSlice"
+import { configureStore } from "@reduxjs/toolkit"
+import productSlice from "./slices/productSlice"
+import cartSlice from "./slices/cartSlice"
 
-const reducers = combineReducers({
-    categories: CategoriesReducer,
-    products: ProductsReducer,
-    cart: CartReducer
+const reducer = combineReducers({
+    categories: categoriesSlice,
+    products: productSlice,
+    cart: cartSlice
 })
-const newStore = createStore(reducers)
-
+const newStore = configureStore({reducer})
 export default newStore;

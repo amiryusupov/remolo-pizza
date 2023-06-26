@@ -1,11 +1,11 @@
 import React from 'react'
-import { setCartAc } from '../../redux/actions/cartAction';
 import { useDispatch } from 'react-redux';
+import { setCart } from '../../redux/slices/cartSlice';
 
 function Products({ product }) {
     const dispatch = useDispatch()
     const handleCartBtn = (product) => {
-        dispatch(setCartAc({ product }))
+        dispatch(setCart({ product }))
     }
     return (
         <div className="main__products">
