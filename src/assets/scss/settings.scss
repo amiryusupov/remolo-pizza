@@ -1,0 +1,54 @@
+
+.settings {
+    width: 92%;
+    height: 100vh;
+    padding: 20px 0 0 45px;
+    &__row {
+        width: 100%;
+        @include flex(flex-start, flex-start, column);
+        .settings__title {
+            @include flex(flex-start, center, column);
+            &-text {
+                @include font(26, 26, 700, auto);
+                margin-bottom: 5px;
+                color: $black-color;
+            }
+            &-desc {
+                @include font(16, 16, 600, auto);
+                color: $light-gray;
+            }
+        }
+        .settings__data {
+            @include flex(flex-start, center, column);
+            margin-top: 40px;
+            &__item {
+                @include flex(flex-start, center, column);
+                margin-bottom: 30px;
+                &-title, &-text {
+                    @include font(18, 18, 600, auto);
+                    color: $black-color
+                }
+                &-desc {
+                    @include font(16, 16, 500, auto);
+                    color: $light-gray;
+                    margin: 5px 0 15px;
+                }
+            }
+        }
+        .settings__theme {
+            @include flex(flex-start, center, column);
+            &-title {
+                @include font(18, 18, 600, auto);
+                color: $black-color;
+            }
+            &-desc {
+                @include font(16, 16, 500, auto);
+                color: $light-gray;
+                margin: 5px 0 15px 0;
+            }
+            &__switch {
+                @import "./toggle_btn.scss";
+            }
+        }
+    }
+}
