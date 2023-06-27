@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "d": "^1.0.1",
+    "html-react-parser": "^4.0.0",
     "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

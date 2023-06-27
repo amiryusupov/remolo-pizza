@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import search from "../../assets/images/icons/search.svg";
 import Products from "./Products";
 import MainCategory from "./MainCategory";
 import burger__menu from "../../assets/images/icons/burger_menu.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories, getProducts } from "../../redux/actions/categoriesAction";
 
 function Main() {
   const { categories, products } = useSelector((state) => state);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getCategories())
+    dispatch(getProducts())
+  }, [])
   return (
     <div className="main">
       <div className="main-row">
@@ -24,15 +30,21 @@ function Main() {
             Elige nuestras deliciosas pizzas
           </span>
         </div>
-        <MainCategory
+        {
+          categories.loading === true ? "Loading..." : 
+          <MainCategory
           categoriesData={categories.items}
           activeCategory={categories.activeCategory}
         />
+        }
+       {
+        products.loading === true ? "Loading..." :
         <Products
-          product={products.items.filter(
-            (item) => item.category === categories.activeCategory
-          )}
-        />
+        product={products.items.filter(
+          (item) => item.category === categories.activeCategory
+        )}
+      />
+       }
       </div>
     </div>
   );
