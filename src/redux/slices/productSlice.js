@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { products } from "../../helpers/products"
 import { getProducts } from "../actions/categoriesAction"
 
 const initialState = {
@@ -18,7 +17,7 @@ const productsSlice = createSlice({
             state.loading = false,
             state.error = ""
         },
-        [getProducts.pending.type]: (state, action) => {
+        [getProducts.pending.type]: (state) => {
             state.loading = true
         }
     }

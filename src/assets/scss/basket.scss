@@ -43,7 +43,6 @@
             &-items {
                 width: 100%;
                 height: 100%;
-                overflow: scroll;
                 @include flex(flex-start, center, column);
                 .basket__products-item {
                     width: 100%;

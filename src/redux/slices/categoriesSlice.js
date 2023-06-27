@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { categories } from "../../helpers/categories";
 import { getCategories } from "../actions/categoriesAction";
 
 const initialState = {
-    activeCategory: "Pizzas",
-    items: categories
+    activeCategory: 1,
+    items: []
 }
 
 const categoriesSlice = createSlice({

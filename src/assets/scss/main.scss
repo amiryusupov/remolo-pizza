@@ -153,6 +153,14 @@
                     width: 100%;
                     padding: 33px 24px;
                 }
+                .loading {
+                    width: 92%;
+                    height: 100vh;
+                    @include flex(center, center, unset);
+                    &-text {
+                        @include font(24, 24, 700, 24px);
+                    }
+                }
                 &-row {
                     width: 100%;
                     @include flex(flex-start, center, column);
@@ -292,6 +300,9 @@
                                 width: 156px;
                             }
                             img {
+                                width: 260px;
+                                height: 163px;
+                                object-fit: cover;
                                 border-radius: 16px 16px 0px 0px;
                                 @media screen and (max-width: 630px) {
                                     width: 156px;

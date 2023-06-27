@@ -21,7 +21,7 @@ function Product({ products }) {
         return (
           <div className="basket__products-item" key={item.id}>
             <img
-              src={item.img}
+              src={item.image}
               className="basket__products-item-img"
               alt="basket__product"
             />
