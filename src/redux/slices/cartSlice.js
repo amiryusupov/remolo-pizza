@@ -20,6 +20,9 @@ const cartSlice = createSlice({
         deleteCart: (state, {payload}) => {
             state.items = state.items.filter((item) => item.id !== payload.id)
         },
+        deleteAllCarts: (state, {payload}) => {
+            state.items = state.items.filter((item) => item === payload)
+        },
         increaseQty: (state, {payload}) => {
             state.items = state.items.map((item) =>
                 item.id === payload.id ? { ...item, qty: item.qty + 1 } : item
@@ -35,5 +38,5 @@ const cartSlice = createSlice({
     } 
 })
 
-export const {setCart, deleteCart, increaseQty, decreaseQty} = cartSlice.actions
+export const {setCart, deleteCart, deleteAllCarts, increaseQty, decreaseQty} = cartSlice.actions
 export default cartSlice.reducer

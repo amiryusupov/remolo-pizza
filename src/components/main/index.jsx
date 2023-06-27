@@ -14,11 +14,6 @@ function Main() {
     dispatch(getCategories())
     dispatch(getProducts())
   }, [])
-  console.log(products)
-  console.log(categories)
-  console.log(products.items.filter(
-    (item) => item.id === categories.activeCategory
-  ))
   return (
     <div className="main">
       {

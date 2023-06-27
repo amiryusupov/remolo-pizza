@@ -1,16 +1,21 @@
 import React from "react";
 import del_img from "../../assets/images/icons/delete.svg";
 import Product from "./Product.jsx";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAllCarts } from "../../redux/slices/cartSlice";
 
 function Basket() {
   const { cart } = useSelector(state => state)
+  const dispatch = useDispatch()
   const productPrice = cart.items.map(item => item.price * item.qty)
   const totalPrice = () => {
     const newProductPrices = [...productPrice];
     const newTotal = newProductPrices.reduce((sum, price) => sum + price, 0);
     return newTotal
   };
+  const handleAllCartsDel = (items) => {
+    dispatch(deleteAllCarts({items}))
+  }
   return (
     <div className="basket">
       <div className="basket__row">
@@ -25,6 +30,7 @@ function Basket() {
             </div>
             <img
               src={del_img}
+              onClick={() => handleAllCartsDel(cart)}
               className="basket__products-desc-img"
               alt="delete__img"
             />
