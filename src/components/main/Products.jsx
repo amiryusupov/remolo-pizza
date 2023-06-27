@@ -13,7 +13,7 @@ function Products({ product }) {
                 product.map(item => {
                     return (
                         <div className="main__product" key={item.id}>
-                            <img src={item.image} alt="product__img" />
+                            <img src={item.image} alt="product__img" loading="lazy" />
                             <div className="main__product-detail">
                                 <div className="main__product-col">
                                     <span className="main__product-name">{item.name}</span>

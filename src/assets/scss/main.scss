@@ -153,14 +153,6 @@
                     width: 100%;
                     padding: 33px 24px;
                 }
-                .loading {
-                    width: 92%;
-                    height: 100vh;
-                    @include flex(center, center, unset);
-                    &-text {
-                        @include font(24, 24, 700, 24px);
-                    }
-                }
                 &-row {
                     width: 100%;
                     @include flex(flex-start, center, column);
@@ -222,6 +214,7 @@
                             color: $light-gray;
                         }
                     }
+                    @import "./skeleton.scss";
                     .main__category {
                         width: 100%;
                         position: relative;

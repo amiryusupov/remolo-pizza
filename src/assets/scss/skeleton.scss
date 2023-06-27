@@ -1,0 +1,17 @@
+.skeleton__category {
+    width: 100%;
+    @include flex(center, space-between, row);
+    height: 50px;
+    &-item {
+        @include flex(center, center, row);
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+}
+.skeleton__products {
+    width: 100%;
+    @include flex(center, flex-start, row);
+    flex-wrap: wrap;
+    margin-top: 35px;
+    gap: 20px 20px;
+}
