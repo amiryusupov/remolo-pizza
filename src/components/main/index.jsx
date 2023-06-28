@@ -15,7 +15,6 @@ function Main() {
     dispatch(getCategories())
     dispatch(getProducts())
   }, [])
-  console.log(categories);
   return (
     <div className="main">
           <div className="main-row">

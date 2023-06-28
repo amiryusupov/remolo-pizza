@@ -5,6 +5,7 @@
 
 .app {
     width: 100%;
+    overflow: hidden;
     @include flex(center, space-between, row);
     // Sidebar
     .sidebar {
@@ -277,13 +278,14 @@
                         }
                     }
                     .main__products {
-                        width: 100%;
-                        @include flex(center, flex-start, row);
-                        flex-wrap: wrap;
-                        margin-top: 35px;
+                      width: 100%;
+                      @include flex(center, flex-start, row);
+                      flex-wrap: wrap;
+                      margin-top: 35px;
                         border-radius: 16px;
                         gap: 20px 20px;
                         .main__product {
+                            position: relative;
                             width: 260px;
                             @include flex(flex-start, center, column);
                             border-radius: 16px;
@@ -291,6 +293,40 @@
                             box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
                             @media screen and (max-width: 630px) {
                                 width: 156px;
+                            }
+                            &-like {
+                              position: absolute;
+                              top: 0;
+                              right: 0;
+                              background-color: transparent;
+                              border: 1px solid transparent;
+                              padding: 10px 10px 0 0;
+                              &.active {
+                                svg path {
+                                  fill: $red-color;
+                                  opacity: 1;
+                                  &:hover {
+                                    fill: $red-color;
+                                  }
+                                }
+                              }
+                              svg {
+                                width: 30px;
+                                height: 30px;
+                                path {
+                                  fill: #dddddd;
+                                  stroke: $black-color;
+                                  stroke-width: 1.5px;
+                                  stroke-opacity: .8;
+                                  opacity: 0.7;
+                                  transition: all .2s;
+                                  &:hover {
+                                    fill: #ffffff;
+                                    opacity: 1;
+                                    stroke-opacity: 1;
+                                  }
+                                }
+                              }
                             }
                             img {
                                 width: 260px;
@@ -321,21 +357,21 @@
                                         color: $red-color;
                                     }
                                 }
-                                .main__product-btn {
-                                    @include flex(center, center, unset);
-                                    width: 40px;
-                                    height: 40px;
-                                    cursor: pointer;
-                                    margin: 0 10px 11px 0;
-                                    font-size: 18px;
-                                    border: 1px solid $gray-btn-color;
-                                    border-radius: 16px;
-                                    color: $gray-btn-color;
-                                    background-color: transparent;
-                                    transition: all 0.3s;
-                                    &:hover {
-                                        background-color: $black-color
-                                    }
+                              .main__product-add {
+                                  @include flex(center, center, unset);
+                                  width: 40px;
+                                  height: 40px;
+                                  cursor: pointer;
+                                  margin: 0 10px 11px 0;
+                                  font-size: 18px;
+                                  border: 1px solid $gray-btn-color;
+                                  border-radius: 16px;
+                                  color: $gray-btn-color;
+                                  background-color: transparent;
+                                  transition: all 0.3s;
+                                  &:hover {
+                                      background-color: $black-color
+                                  }
                                 }
                             }
                         }

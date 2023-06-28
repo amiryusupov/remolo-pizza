@@ -14,7 +14,7 @@ export const sidebar__icons = [
         id: 2,
         image: HeartIcon(),
         text: "Favoritos",
-        link: "/"
+        link: "/favourites"
     },
     {
         id: 3,
@@ -26,6 +26,6 @@ export const sidebar__icons = [
         id: 4,
         image: HelpIcon(),
         text: "Resportar",
-        link: "/"
+        link: "/help"
     },
 ]
