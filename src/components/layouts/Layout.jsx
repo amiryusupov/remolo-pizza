@@ -6,7 +6,6 @@ export const Layout = () => {
     <div className="layout">
       <div className="main-layout__row">
         <Main />
-        <Basket />
       </div>
     </div>
   );

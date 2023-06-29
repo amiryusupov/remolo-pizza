@@ -1,0 +1,60 @@
+.order {
+    width: 100%;
+    height: 90vh;
+    &__column {
+      height: 100%;
+        @include flex(flex-start, space-between, column);
+        .order__detail {
+          width: 100%;
+          .order__checkout {
+            width: 100%;
+            @include flex(flex-start, space-between, row);
+            margin-bottom: 20px;
+            &__text {
+              @include flex(flex-start, center, column);
+              .order__checkout__title {
+                @include font(20, 20, 600, auto);
+                color: $black-color;
+              }
+              .order__checkout__text {
+                @include font(16, 16, 500, auto);
+                color: $order-bg-color;
+              }
+            }
+            svg {
+              cursor: pointer;
+            }
+        }
+        .order__data {
+          width: 100%;
+          @include flex(flex-start, center, column);
+          &__item {
+            @include flex(flex-start, center, column);
+            margin-bottom: 15px;
+            &-title {
+              @include font(16, 16, 500, auto);
+              color: $gray-btn-color;
+            }
+            &-text {
+              @include font(18, 18, 600, auto);
+              color: $black-color;
+            }
+          }
+        }
+        }
+        .order__confirm {
+          width: 100%;
+          @include flex(center, center, unset);
+          &-btn {
+            width: 100%;
+            height: 60px;
+            border-radius: 50px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            color: $white-color;
+            background-color: $order-bg-color;
+          }
+        }
+    }
+}

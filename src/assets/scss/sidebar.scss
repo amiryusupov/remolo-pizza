@@ -1,0 +1,175 @@
+.sidebar {
+    width: 8%;
+    height: 100vh;
+    position: sticky;
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    background-color: $sidebar-bg;
+    transition: all 0.3s;
+    &.active {
+        width: 23%;
+        .sidebar__col {
+            @include flex(flex-start, space-between, column);
+            padding-left: 31px;
+            &-burger {
+                display: none;
+            }
+
+            // Sidebar column logo mobile
+            .sidebar__col-logo-mobile {
+                @include flex(center, space-between, row);
+                width: 100%;
+                height: auto;
+                margin-bottom: 50px;
+                padding-right: 21px;
+                .sidebar__col-logo-imgs {
+                    @include flex(center, center, row);
+                    img {
+                        &:first-child {
+                            margin-right: 12px;
+                        }
+                    }
+                }
+                .sidebar__col-burger-mobile {
+                    border: none;
+                    background-color: transparent;
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+            // Sidebar icons column
+            .sidebar__icons-col {
+                @include flex(flex-start, center, column);
+                .sidebar__icons-item {
+                    .sidebar__icons {
+                        @include flex(center, flex-start, row);
+                        &-text {
+                            @include font(16, 16, 700, 24px);
+                            display: block;
+                            color: $light-gray;
+                            margin-left: 43px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 767px) and (max-width: 1440px) {
+        width: 8%;
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+    &__col {
+        @include flex(center, space-between, column);
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+        .sidebar__col-burger {
+            border: none;
+            cursor: pointer;
+            margin-bottom: 50px;
+            background-color: transparent;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        &-logo-mobile {
+            display: none
+        }
+        .sidebar__icons-col {
+            width: 100%;
+            .sidebar__icons-item {
+                width: 100%;
+                position: relative;
+                &.red {
+                    &.active {
+                        &::after {
+                            background-color: $red-color;
+                        }
+                        .sidebar__icons {
+                            svg path{
+                                fill: $red-color
+                            }
+                            .sidebar__icons-text {
+                                color: $red-color;
+                            }
+                        }
+                    }
+                }
+                &.yellow {
+                    &.active {
+                        &::after {
+                            background-color: $yellow-color;
+                        }
+                        .sidebar__icons {
+                            svg path{
+                                fill: $yellow-color
+                            }
+                            .sidebar__icons-text {
+                                color: $yellow-color;
+                            }
+                        }
+                    }
+                }
+                &.blue {
+                    &.active {
+                        &::after {
+                            background-color: $blue-color;
+                        }
+                        .sidebar__icons {
+                            svg path{
+                                fill: $blue-color
+                            }
+                            .sidebar__icons-text {
+                                color: $blue-color;
+                            }
+                        }
+                    }
+                }
+                &.pink {
+                    &.active {
+                        &::after {
+                            background-color: $pink-color;
+                        }
+                        .sidebar__icons {
+                            svg path{
+                                fill: $pink-color
+                            }
+                            .sidebar__icons-text {
+                                color: $pink-color;
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 3px;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+                }
+                &:not(:last-child) {
+                    margin-bottom: 60px;
+                }
+                .sidebar__icons {
+                    @include flex(center, center, column);
+                    &-text {
+                        display: none;
+                    }
+                    @media screen and (max-width: 767px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -23,6 +23,19 @@
             &__item {
                 @include flex(flex-start, center, column);
                 margin-bottom: 30px;
+                .input {
+                    background-color: $sidebar-bg;
+                    color: $light-gray;
+                    input {
+                        font-size: 16px;
+                        border: none;
+                        padding: 10px 15px;
+                        background-color: $sidebar-bg;
+                        &:focus {
+                            outline: none
+                        }
+                    }
+                }
                 &-title, &-text {
                     @include font(18, 18, 600, auto);
                     color: $black-color
