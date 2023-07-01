@@ -15,7 +15,7 @@ a {
   color: inherit;
 }
 a, span, button {
-  font-family: $main-font;
+  font-family: var(--main-font);
 }
 
 button {

@@ -39,7 +39,7 @@
                         @include flex(center, flex-start, row);
                         border: none;
                         border-radius: 10px;
-                        background-color: $sidebar-bg;
+                        background-color: var(--sidebar-bg);
                         padding: 13px 24px;
                         margin-bottom: 40px;
                         @media screen and (max-width: 767px) {
@@ -55,11 +55,11 @@
                             height: 100%;
                             border: none;
                             @include font(18, 18, 500, 24px);
-                            color: $black-color;
+                            color: var(--black-color);
                             background-color: transparent;
                             &::placeholder {
                                 @include font(16, 16, 400, 24px);
-                                color: $light-gray;
+                                color: var(--light-gray);
                             }
                             &:focus {
                                 outline: none
@@ -84,11 +84,11 @@
                         margin-bottom: 27px;
                         &-text1 {
                             @include font(26, 26, 700, 39px);
-                            color: $black-color;
+                            color: var(--black-color);
                         }
                         &-text2 {
                             @include font(16, 16, 600, 24px);
-                            color: $light-gray;
+                            color: var(--light-gray);
                         }
                     }
                     @import "./skeleton.scss";
@@ -103,7 +103,7 @@
                             margin-top: 12px;
                             position: absolute;
                             bottom: 0;
-                            background-color: $sidebar-bg;
+                            background-color: var(--sidebar-bg);
                             @media screen and (max-width: 767px) {
                                 display: none;
                             }
@@ -116,14 +116,14 @@
                             background-color: transparent;
                             &.active {
                                 svg path {
-                                    fill: $red-color;
+                                    fill: var(--main-color);
                                 }
                                 .main__category-text {
-                                    color: $red-color;
+                                    color: var(--main-color);
                                 }
                             }
                             @media screen and (max-width: 630px) {
-                                background-color: $gray-bg-color;
+                                background-color: var(--gray-bg-color);
                                 border-radius: 16px;
                             }
                             svg {
@@ -137,16 +137,16 @@
                                     margin-right: 0;
                                 }
                                 &.active {
-                                    background-color: $red-color;
-                                    color: $white-color;
+                                    background-color: var(--main-color);
+                                    color: var(--white-color);
                                 }
                             }
                             .main__category-text {
                                 @include font(20, 20, 600, 27px);
                                 // &:first-child {
-                                //     color: $red-color;
+                                //     color: var(--main-color);
                                 // }
-                                color: $black-color;
+                                color: var(--black-color);
                                 @media screen and (max-width: 630px) {
                                     display: none;
                                 }
@@ -165,7 +165,7 @@
                             width: 260px;
                             @include flex(flex-start, center, column);
                             border-radius: 16px;
-                            background-color: $white-color;
+                            background-color: var(--white-color);
                             box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
                             @media screen and (max-width: 630px) {
                                 width: 156px;
@@ -179,10 +179,10 @@
                               padding: 10px 10px 0 0;
                               &.active {
                                 svg path {
-                                  fill: $red-color;
+                                  fill: var(--main-color);
                                   opacity: 1;
                                   &:hover {
-                                    fill: $red-color;
+                                    fill: var(--main-color);
                                   }
                                 }
                               }
@@ -191,7 +191,7 @@
                                 height: 30px;
                                 path {
                                   fill: #dddddd;
-                                  stroke: $black-color;
+                                  stroke: var(--black-color);
                                   stroke-width: 1.5px;
                                   stroke-opacity: .8;
                                   opacity: 0.7;
@@ -226,11 +226,11 @@
                                     padding-left: 15px;
                                     .main__product-name {
                                         @include font(16, 13, 500, 24px);
-                                        color: $gray-color;
+                                        color: var(--gray-color);
                                     }   
                                     .main__product-price {
                                         @include font(16, 14, 600, 24px);
-                                        color: $red-color;
+                                        color: var(--main-color);
                                     }
                                 }
                               .main__product-add {
@@ -240,13 +240,13 @@
                                   cursor: pointer;
                                   margin: 0 10px 11px 0;
                                   font-size: 18px;
-                                  border: 1px solid $gray-btn-color;
+                                  border: 1px solid var(--gray-btn-color);
                                   border-radius: 16px;
-                                  color: $gray-btn-color;
+                                  color: var(--gray-btn-color);
                                   background-color: transparent;
                                   transition: all 0.3s;
                                   &:hover {
-                                      background-color: $black-color
+                                      background-color: var(--black-color);
                                   }
                                 }
                             }

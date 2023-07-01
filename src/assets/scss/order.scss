@@ -14,11 +14,11 @@
               @include flex(flex-start, center, column);
               .order__checkout__title {
                 @include font(20, 20, 600, auto);
-                color: $black-color;
+                color: var(--black-color);
               }
               .order__checkout__text {
                 @include font(16, 16, 500, auto);
-                color: $order-bg-color;
+                color: var(--order-bg-color);
               }
             }
             svg {
@@ -33,11 +33,11 @@
             margin-bottom: 15px;
             &-title {
               @include font(16, 16, 500, auto);
-              color: $gray-btn-color;
+              color: var(--gray-btn-color);
             }
             &-text {
               @include font(18, 18, 600, auto);
-              color: $black-color;
+              color: var(--black-color);
             }
           }
         }
@@ -52,8 +52,8 @@
             margin-top: 20px;
             border: none;
             cursor: pointer;
-            color: $white-color;
-            background-color: $order-bg-color;
+            color: var(--white-color);
+            background-color: var(--order-bg-color);
           }
         }
     }

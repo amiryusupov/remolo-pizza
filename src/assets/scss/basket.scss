@@ -1,7 +1,7 @@
 .basket {
     width: 30%;
     height: 100vh;
-    background-color: $sidebar-bg;
+    background-color: var(--sidebar-bg);
     @media screen and (max-width: 1440px) {
         display: none;
     }
@@ -13,7 +13,7 @@
         @import "./order.scss";
         .basket__title {
             @include font(26, 26, 700, 30px);
-            color: $black-color;
+            color: var(--black-color);
             margin-bottom: 35px
         }
         .basket__products {
@@ -27,11 +27,11 @@
                     margin-bottom: 35px;
                     &1 {
                         @include font(20, 20, 600, 30px);
-                        color: $black-color;
+                        color: var(--black-color);
                     }
                     &2 {
                         @include font(16, 16, 500, 24px);
-                        color: $gray-color;
+                        color: var(--gray-color);
                     }
                 }
                 &-img {
@@ -48,7 +48,7 @@
                     width: 100%;
                     @include flex(flex-start, space-between, row);
                     border-radius: 16px;
-                    background-color: $white-color;
+                    background-color: var(--white-color);
                     padding: 12px 18px 12px 12px;
                     &:not(:last-child) {
                         margin-bottom: 25px;
@@ -66,17 +66,17 @@
                             margin-bottom: 27px;
                             .basket__products-item-name {
                                 @include font(16, 16, 500, 24px);
-                                color: $gray-color;
+                                color: var(--gray-color);
                             }
                             .basket__products-item-price {
                                 @include font(16, 16, 500, 24px);
-                                color: $gray-btn-color
+                                color: var(--gray-btn-color)
                             }
                         }
                         .basket__products-item-quantity {
                             @include flex(center, space-between, row);
                             border-radius: 9px;
-                            background-color: $btn-bg-color;
+                            background-color: var(--btn-bg-color);
                             width: 80px;
                             height: 35px;
                             button {
@@ -86,7 +86,7 @@
                                 transition: all 0.3s;
                                 border-radius: 9px;
                                 &:hover {
-                                    background-color: $gray-plus-color;
+                                    background-color: var(--gray-plus-color);
                                 }
                             }
                         }
@@ -100,9 +100,9 @@
                             transition: all 0.3s;
                         }
                         &:hover {
-                            background-color: $gray-plus-color;
+                            background-color: var(--gray-plus-color);
                             svg path {
-                                fill: $red-color;
+                                fill: var(--main-color);
                             }
                         }
                     }
@@ -125,11 +125,11 @@
                     }
                     &1 {
                         @include font(16, 16, 600, 21px);
-                        color: $gray-btn-color;
+                        color: var(--gray-btn-color);
                     }
                     &2 {
                         @include font(18, 18, 700, 24px);
-                        color: $dark-black-color;
+                        color: var(--dark-black-color);
                     }
                 }
             }
@@ -138,10 +138,11 @@
                 width: 100%;
                 height: 60px;
                 border-radius: 50px;
+                border: none;
                 margin-top: 20px;
                 cursor: pointer;
-                color: $white-color;
-                background-color: $order-bg-color;
+                color: var(--white-color);
+                background-color: var(--order-bg-color);
             }
         }
     }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { settings } from "../../helpers/settings";
-import { Input } from "../form/input";
+import { Input } from "../form/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../redux/slices/userSlice";
 

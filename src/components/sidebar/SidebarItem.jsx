@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { sidebar__icons } from "../../helpers/sidebar_icons";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { settings } from '../../helpers/settings';
 
 function SidebarItem() {
   const {pathname} = useLocation()

@@ -5,7 +5,7 @@
     flex-shrink: 0;
     top: 0;
     left: 0;
-    background-color: $sidebar-bg;
+    background-color: var(--sidebar-bg);
     transition: all 0.3s;
     &.active {
         width: 23%;
@@ -49,7 +49,7 @@
                         &-text {
                             @include font(16, 16, 700, 24px);
                             display: block;
-                            color: $light-gray;
+                            color: var(--light-gray);
                             margin-left: 43px;
                         }
                     }
@@ -86,66 +86,7 @@
             .sidebar__icons-item {
                 width: 100%;
                 position: relative;
-                &.red {
-                    &.active {
-                        &::after {
-                            background-color: $red-color;
-                        }
-                        .sidebar__icons {
-                            svg path{
-                                fill: $red-color
-                            }
-                            .sidebar__icons-text {
-                                color: $red-color;
-                            }
-                        }
-                    }
-                }
-                &.yellow {
-                    &.active {
-                        &::after {
-                            background-color: $yellow-color;
-                        }
-                        .sidebar__icons {
-                            svg path{
-                                fill: $yellow-color
-                            }
-                            .sidebar__icons-text {
-                                color: $yellow-color;
-                            }
-                        }
-                    }
-                }
-                &.blue {
-                    &.active {
-                        &::after {
-                            background-color: $blue-color;
-                        }
-                        .sidebar__icons {
-                            svg path{
-                                fill: $blue-color
-                            }
-                            .sidebar__icons-text {
-                                color: $blue-color;
-                            }
-                        }
-                    }
-                }
-                &.pink {
-                    &.active {
-                        &::after {
-                            background-color: $pink-color;
-                        }
-                        .sidebar__icons {
-                            svg path{
-                                fill: $pink-color
-                            }
-                            .sidebar__icons-text {
-                                color: $pink-color;
-                            }
-                        }
-                    }
-                }
+
                 &.active {
                     &::after {
                         content: '';
@@ -155,6 +96,15 @@
                         width: 3px;
                         height: 100%;
                         border-radius: 10px;
+                        background-color: var(--main-color);
+                    }
+                    .sidebar__icons {
+                        svg path{
+                            fill: var(--main-color);
+                        }
+                        .sidebar__icons-text {
+                            color: var(--main-color);
+                        }
                     }
                 }
                 &:not(:last-child) {

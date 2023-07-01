@@ -10,11 +10,11 @@
             &-text {
                 @include font(26, 26, 700, auto);
                 margin-bottom: 5px;
-                color: $black-color;
+                color: var(--black-color);
             }
             &-desc {
                 @include font(16, 16, 600, auto);
-                color: $light-gray;
+                color: var(--light-gray);
             }
         }
         .settings__data {
@@ -24,13 +24,13 @@
                 @include flex(flex-start, center, column);
                 margin-bottom: 30px;
                 .input {
-                    background-color: $sidebar-bg;
-                    color: $light-gray;
+                    background-color: var(--sidebar-bg);
+                    color: var(--light-gray);
                     input {
                         font-size: 16px;
                         border: none;
                         padding: 10px 15px;
-                        background-color: $sidebar-bg;
+                        background-color: var(--sidebar-bg);
                         &:focus {
                             outline: none
                         }
@@ -38,11 +38,11 @@
                 }
                 &-title, &-text {
                     @include font(18, 18, 600, auto);
-                    color: $black-color
+                    color: var(--black-colo)r
                 }
                 &-desc {
                     @include font(16, 16, 500, auto);
-                    color: $light-gray;
+                    color: var(--light-gray);
                     margin: 5px 0 15px;
                 }
             }
@@ -51,15 +51,41 @@
             @include flex(flex-start, center, column);
             &-title {
                 @include font(18, 18, 600, auto);
-                color: $black-color;
+                color: var(--black-color);
             }
             &-desc {
                 @include font(16, 16, 500, auto);
-                color: $light-gray;
+                color: var(--light-gray);
                 margin: 5px 0 15px 0;
             }
             &__switch {
                 @import "./toggle_btn.scss";
+            }
+        }
+        .settings__colors {
+            width: 100%;
+            @include flex(center, flex-start, row);
+            gap: 10px;
+            margin-top: 15px;
+            .settings__color {
+                padding: 15px;
+                border-radius: 15px;
+                border: 1px solid transparent;
+                &.red {
+                    background-color: #FF4E4E;
+                }
+                &.yellow {
+                    background-color: #FFA73F;
+                }
+                &.blue {
+                    background-color: #50C2E7;
+                }
+                &.pink {
+                    background-color: #FF678C;
+                }
+                &.active {
+                    border: 1px solid var(--black-color);
+                }
             }
         }
     }
