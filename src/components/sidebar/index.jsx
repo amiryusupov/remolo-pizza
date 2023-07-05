@@ -4,11 +4,15 @@ import burger__menu2 from "../../assets/images/icons/burger_menu2.svg"
 import sidebar_logo_icon from "../../assets/images/icons/sidebar__logo-icon.svg"
 import sidebar_logo_text from "../../assets/images/icons/sidebar__logo-text.svg"
 import SidebarItem from "./SidebarItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Sidebar = () => {
   const [active, setActive] = useState(0)
+  const {pathname} = useLocation()
   const handleActive = () => {
     setActive(!active)
+  }
+  if(pathname === "/login") {
+    return null
   }
   return (
   <div className={`sidebar${active ? " active" : ""}`}>

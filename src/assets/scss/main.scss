@@ -8,6 +8,7 @@
     @include flex(center, space-between, row);
     // Sidebar
     @import "./sidebar.scss";
+    @import "./login.scss";
     .layout {
         position: relative;
         width: 62%;
