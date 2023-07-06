@@ -17,13 +17,3 @@ export const getProducts = createAsyncThunk(
         return response.data;
     }
 )
-export const loginRequest = createAsyncThunk(
-    'user/login',
-    async (_, thunkApi) => {
-        const response = await axiosUrl.post(
-            login,
-            {email: "admin@gmail.com", password: "admin"}
-        )
-        console.log(response);
-    }
-)

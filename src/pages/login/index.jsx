@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginRequest } from '../../redux/actions/loginAction'
 
 function LoginPage() {
 const initialState = {
@@ -6,10 +8,13 @@ const initialState = {
     password: ""
 }
   const [formState, setFormState] = useState(initialState)
+  const dispatch = useDispatch()
+  const {loading} = useSelector((state) => state.auth)
   const onInputChange = ({target}) => {
     const {value, name} = target
     setFormState({...formState, [name]: value})
   }
+  dispatch(loginRequest(formState))
   return (
     <div className="login-page">
       <div className="login-form">
@@ -35,7 +40,7 @@ const initialState = {
               className="login-form__input"
             />
           </div>
-          <button type="submit" className="login-form__button">Login</button>
+          <button type="submit" disabled={loading} className="login-form__button">{loading? "Loading..." : "Login"}</button>
         </form>
       </div>
     </div>
