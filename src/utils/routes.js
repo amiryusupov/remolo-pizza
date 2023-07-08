@@ -20,17 +20,17 @@ export const routes = [
   {
     id: 3,
     path: "/settings",
-    component: Settings
+    component: Settings,
   },
   {
     id: 4,
     path: "/help",
-    component: Help
+    component: Help,
   },
   {
     id: 5,
     path: "/login",
-    component: LoginPage
+    component: LoginPage,
   }
 ];
 

@@ -7,6 +7,7 @@ export const loginRequest = createAsyncThunk(
     async (data, thunkApi) => {
         try {
             const response = await axiosUrl.post(login, data)
+            console.log(response.data);
             return response.data
         }
         catch (error) {

@@ -11,7 +11,7 @@ const initialState = {
   const dispatch = useDispatch()
   const {loading} = useSelector((state) => state.auth)
   const onInputChange = ({target}) => {
-    const {value, name} = target
+    const {name, value} = target
     setFormState({...formState, [name]: value})
   }
   dispatch(loginRequest(formState))
@@ -21,10 +21,11 @@ const initialState = {
         <h2 className="login-form__title">Login</h2>
         <form className="login-form__form">
           <div className="login-form__group">
-            <label htmlFor="username" className="login-form__label">Username</label>
+            <label htmlFor="email" className="login-form__label">Username</label>
             <input
               type="email"
               id="username"
+              name='email'
               required
               onChange={onInputChange}
               className="login-form__input"
@@ -35,6 +36,7 @@ const initialState = {
             <input
               type="password"
               id="password"
+              name='password'
               required
               onChange={onInputChange}
               className="login-form__input"

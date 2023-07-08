@@ -4,11 +4,18 @@ import Sidebar from "../src/components/sidebar/index"
 import { adminRoutes, routes } from "./utils/routes";
 import { SkeletonTheme } from "react-loading-skeleton";
 import Basket from "./components/basket";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 function App() {
   const {color} = useSelector((state) => state)
-  const {isAuth} = useSelector((state) => state.auth)
-  const routerList = isAuth ? adminRoutes : routes
+  const {tokens, isAuth} = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+  console.log(tokens);
+  useEffect(() => {
+    if(Boolean(tokens.accessToken.trim()) && Boolean(tokens.refreshToken.trim())) {
+
+    }
+  }, [tokens])
   const {pathname} = useLocation()
   const isCart = ["/", "/favourites"]
   return (
@@ -17,12 +24,20 @@ function App() {
         <Sidebar />
         <Routes>
           {
-            routerList.map((item) => {
-              return (
-                <Route key={item.id} path={item.path} element={item.component()}/>
-              )
-            })
-          }
+            isAuth ? (
+              adminRoutes.map((item) => {
+                return (
+                  <Route key={item.id} path={item.path} element={item.component()}/>
+                )
+              })
+            ) : (
+              routes.map((item) => {
+                return (
+                  <Route key={item.id} path={item.path} element={item.component()}/>
+                )
+              })
+            )
+      }
         </Routes>
         {isCart.includes(pathname) ? <Basket/> : null}
       </SkeletonTheme>
@@ -30,4 +45,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
