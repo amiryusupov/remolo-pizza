@@ -14,7 +14,9 @@ const initialState = {
     const {name, value} = target
     setFormState({...formState, [name]: value})
   }
-  dispatch(loginRequest(formState))
+  const onSubmit = () => {
+    dispatch(loginRequest(formState))
+  }
   return (
     <div className="login-page">
       <div className="login-form">
@@ -42,7 +44,7 @@ const initialState = {
               className="login-form__input"
             />
           </div>
-          <button type="submit" disabled={loading} className="login-form__button">{loading? "Loading..." : "Login"}</button>
+          <button type="submit" disabled={loading} onClick={onSubmit} className="login-form__button">{loading? "Loading..." : "Login"}</button>
         </form>
       </div>
     </div>

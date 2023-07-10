@@ -5,8 +5,10 @@ import sidebar_logo_icon from "../../assets/images/icons/sidebar__logo-icon.svg"
 import sidebar_logo_text from "../../assets/images/icons/sidebar__logo-text.svg"
 import SidebarItem from "./SidebarItem";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Sidebar = () => {
   const [active, setActive] = useState(0)
+  const {isAuth} = useSelector((state) => state.auth)
   const {pathname} = useLocation()
   const handleActive = () => {
     setActive(!active)
@@ -29,7 +31,11 @@ const Sidebar = () => {
             <img src={burger__menu2} alt="burger__menu" onClick={handleActive} />
           </button>
         </div>
-        <SidebarItem/>
+        {
+          isAuth ? "admin" : (
+            <SidebarItem/>
+          )
+        }
     </div>
   </div>
   )

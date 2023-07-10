@@ -6,7 +6,7 @@ import { deleteAllCarts } from "../../redux/slices/cartSlice";
 import Order from "./Order";
 
 function Basket() {
-  const { cart } = useSelector(state => state)
+  const { cart } = useSelector((state) => state)
   const dispatch = useDispatch()
   const productPrice = cart.items.map(item => item.price * item.qty)
   const totalPrice = () => {
