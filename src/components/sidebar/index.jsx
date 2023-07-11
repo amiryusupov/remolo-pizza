@@ -6,6 +6,7 @@ import sidebar_logo_text from "../../assets/images/icons/sidebar__logo-text.svg"
 import SidebarItem from "./SidebarItem";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import {sidebarAdminData, sidebar__icons} from "../../helpers/sidebar_icons"
 const Sidebar = () => {
   const [active, setActive] = useState(0)
   const {isAuth} = useSelector((state) => state.auth)
@@ -31,11 +32,7 @@ const Sidebar = () => {
             <img src={burger__menu2} alt="burger__menu" onClick={handleActive} />
           </button>
         </div>
-        {
-          isAuth ? "admin" : (
-            <SidebarItem/>
-          )
-        }
+            <SidebarItem sidebar__data={isAuth ? sidebarAdminData : sidebar__icons}/>
     </div>
   </div>
   )

@@ -44,7 +44,7 @@ const initialState = {
               className="login-form__input"
             />
           </div>
-          <button type="submit" disabled={loading} onClick={onSubmit} className="login-form__button">{loading? "Loading..." : "Login"}</button>
+          <button type="submit" disabled={loading} onClick={onSubmit} className="login-form__button">{loading ? "Loading..." : "Login"}</button>
         </form>
       </div>
     </div>
