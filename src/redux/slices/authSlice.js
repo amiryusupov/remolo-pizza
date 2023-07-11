@@ -3,13 +3,14 @@ import { loginRequest } from "../actions/loginAction";
 
 const accessToken = localStorage.getItem("accessToken");
 const refreshToken = localStorage.getItem("refreshToken");
+const isAuth = localStorage.getItem("auth");
 const initialState = {
   tokens: {
-    accessToken: accessToken ? accessToken : [],
-    refreshToken: refreshToken ? refreshToken : []
+    accessToken: accessToken ? accessToken : "",
+    refreshToken: refreshToken ? refreshToken : ""
   },
   loading: false,
-  isAuth: false
+  isAuth: isAuth ? isAuth : ""
 }
 const authSlice = createSlice({
   name: "auth",
@@ -17,7 +18,6 @@ const authSlice = createSlice({
   reducers: {
     setAuth: (state, action) => {
       state[action.payload.key] = action.payload.value;
-      localStorage.setItem("tokens", JSON.stringify(state))
     },
     setIsAuth: (state, action) => {
       state.isAuth = action.payload
@@ -36,6 +36,7 @@ const authSlice = createSlice({
       state.isAuth = true
       localStorage.setItem("accessToken", action.payload.access)
       localStorage.setItem("refreshToken", action.payload.refresh)
+      localStorage.setItem("auth", action.payload.isAuth)
     }
   }
 });

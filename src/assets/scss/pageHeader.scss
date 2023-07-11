@@ -1,5 +1,12 @@
 .pageHeader {
     width: 100%;
     background-color: var(--white-color);
-    border-radius: ;
+    border-radius: 12px;
+    padding: 12px;
+    &-row {
+        @include flex(center, space-between, row);
+    }
+    &-title {
+        font-size: 16px;
+    }
 }

@@ -43,6 +43,6 @@ export const sidebarAdminData = [
         id: 2,
         image: CategoryIcon(),
         text: "Category",
-        link: "/category",
+        link: "/categories",
     }
 ]

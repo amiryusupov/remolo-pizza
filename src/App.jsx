@@ -18,16 +18,15 @@ function App() {
       <SkeletonTheme baseColor="#a6a6a6" highlightColor="#d2d2d2">
         <Sidebar />
         <Routes>
-          {routes.map((item) => (
-            <Route key={item.id} path={item.path} element={item.component()} />
-          ))}
           {auth
             ? adminRoutes.map((item) => (
-              <Route key={item.id} path={item.path} element={item.component()} />
-            )) : null
+              <Route key={item.id} path={item.path} element={item.component} />
+            )) : routes.map((item) => (
+              <Route key={item.id} path={item.path} element={item.component} />
+            ))
           }
         </Routes>
-        {isCart.includes(pathname) ? <Basket /> : null}
+        {!auth && isCart.includes(pathname) ? <Basket /> : null}
       </SkeletonTheme>
     </div>
   )
