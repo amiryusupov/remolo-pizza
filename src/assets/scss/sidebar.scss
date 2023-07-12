@@ -5,6 +5,7 @@
     flex-shrink: 0;
     top: 0;
     left: 0;
+    float: right;
     background-color: var(--sidebar-bg);
     transition: all 0.3s;
     &.active {
@@ -56,9 +57,6 @@
                 }
             }
         }
-    }
-    @media screen and (min-width: 767px) and (max-width: 1440px) {
-        width: 8%;
     }
     @media screen and (max-width: 767px) {
         display: none;

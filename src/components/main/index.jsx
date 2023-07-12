@@ -4,9 +4,10 @@ import Products from "./Products";
 import MainCategory from "./MainCategory";
 import burger__menu from "../../assets/images/icons/burger_menu.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories, getProducts } from "../../redux/actions/categoriesAction";
+import { getCategories } from "../../redux/actions/categoriesAction";
 import CategorySkeleton from "../skeleton/CategorySkeleton";
 import ProductSkeleton from "../skeleton/ProductSkeleton";
+import { getProducts } from "../../redux/actions/productsAction";
 
 function Main() {
   const { categories, products } = useSelector((state) => state);

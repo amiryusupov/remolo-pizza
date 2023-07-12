@@ -1,7 +1,7 @@
 import React from "react";
 import RemoveIcon from "../../assets/images/icons/Remove.jsx";
 import { useDispatch } from "react-redux";
-import { decreaseQty, deleteCart, increaseQty } from "../../redux/slices/cartSlice";
+import { decreaseQty, deleteCart, increaseQty } from "../../redux/slices/cartSlice.js";
 
 function Product({ products }) {
   const dispatch = useDispatch()

@@ -1,0 +1,14 @@
+.pageHeader {
+  width: 100%;
+  background-color: var(--white-color);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.15);
+  &-row {
+    @include flex(center, space-between, row);
+  }
+  &-title {
+    @include font(18, 18, 500, normal);
+  }
+}

@@ -13,11 +13,11 @@
             &__text {
               @include flex(flex-start, center, column);
               .order__checkout__title {
-                @include font(20, 20, 600, auto);
+                @include font(20, 20, 600, normal);
                 color: var(--black-color);
               }
               .order__checkout__text {
-                @include font(16, 16, 500, auto);
+                @include font(16, 16, 500, normal);
                 color: var(--order-bg-color);
               }
             }
@@ -32,11 +32,11 @@
             @include flex(flex-start, center, column);
             margin-bottom: 15px;
             &-title {
-              @include font(16, 16, 500, auto);
+              @include font(16, 16, 500, normal);
               color: var(--gray-btn-color);
             }
             &-text {
-              @include font(18, 18, 600, auto);
+              @include font(18, 18, 600, normal);
               color: var(--black-color);
             }
           }

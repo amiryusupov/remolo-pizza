@@ -2,17 +2,20 @@
 @import "./global/normalize";
 @import "./global/variables";
 @import "./mixins/mixins";
+@import "./pages.scss";
 
-.app {
+.wrapper {
     width: 100%;
-    @include flex(center, space-between, row);
+    display: flex;
+    // @include flex(flex-start, space-between, row);
     // Sidebar
     @import "./sidebar.scss";
-    @import "./login.scss";
     .layout {
         position: relative;
         width: 62%;
-    
+    @media screen and (max-width: 1440px) {
+        width: 100%;
+    }
         .main-layout__row {
             @include flex(center, space-between, row);
             width: 100%;
@@ -255,10 +258,6 @@
                     }
                 }
             }
-            //Basket
           }
         }
-        // Settings
-    @import "./basket.scss";
-    @import "./settings.scss";
 }

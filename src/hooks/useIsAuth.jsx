@@ -6,7 +6,7 @@ import { setAuth } from "../redux/slices/authSlice";
 function useIsAuth() {
   const { tokens, isAuth } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
-  const navigator = useNavigate()
+  const navigate = useNavigate()
   return useMemo(() => {
     if ( 
          Boolean(tokens.accessToken?.trim().length) &&
@@ -14,7 +14,7 @@ function useIsAuth() {
       ) {
       console.log(true, "if trueeee");
       dispatch(setAuth(true))
-      navigator("/products")
+      navigate("/products")
     }
     else {
       console.log(false, "if falseeee");

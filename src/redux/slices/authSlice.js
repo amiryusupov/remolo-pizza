@@ -36,7 +36,7 @@ const authSlice = createSlice({
       state.isAuth = true
       localStorage.setItem("accessToken", action.payload.access)
       localStorage.setItem("refreshToken", action.payload.refresh)
-      localStorage.setItem("auth", action.payload.isAuth)
+      localStorage.setItem("auth", state.isAuth)
     }
   }
 });

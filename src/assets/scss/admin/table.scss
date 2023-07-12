@@ -1,0 +1,52 @@
+.admin-space {
+  @include flex();
+  gap: 10px;
+  .admin-btn {
+    @include font(16, 16, 500, normal);
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    color: var(--white-color);
+    background-color: var(--violet-color);
+    transition: all 0.2s;
+    &:hover {
+      background-color: var(--violet-hover);
+    }
+  }
+}
+.table {
+  width: 100%;
+  @include flex(center, space-between, column);
+  thead {
+    width: 100%;
+    padding: 15px;
+    color: var(--white-color);
+    background-color: var(--violet-color);
+    tr {
+      @include flex(center, space-around, row);
+      flex: 1;
+      th {
+        @include font(16, 16, 600, normal);
+        font-family: var(--main-font);
+      }
+    }
+  }
+  tbody {
+    width: 100%;
+    tr {
+      width: 100%;
+      padding: 17px;
+      border-bottom: 1px solid var(--gray-plus-color);
+      @include flex(center, space-around, row);
+      &:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      td {
+        flex: 1;
+        @include font(16, 16, 500, normal);
+        font-family: var(--main-font);
+        text-align: center;
+      }
+    }
+  }
+}

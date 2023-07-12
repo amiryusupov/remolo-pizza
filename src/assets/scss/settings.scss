@@ -8,12 +8,12 @@
         .settings__title {
             @include flex(flex-start, center, column);
             &-text {
-                @include font(26, 26, 700, auto);
+                @include font(26, 26, 700, normal);
                 margin-bottom: 5px;
                 color: var(--black-color);
             }
             &-desc {
-                @include font(16, 16, 600, auto);
+                @include font(16, 16, 600, normal);
                 color: var(--light-gray);
             }
         }
@@ -37,11 +37,11 @@
                     }
                 }
                 &-title, &-text {
-                    @include font(18, 18, 600, auto);
-                    color: var(--black-colo)r
+                    @include font(18, 18, 600, normal);
+                    color: var(--black-color)
                 }
                 &-desc {
-                    @include font(16, 16, 500, auto);
+                    @include font(16, 16, 500, normal);
                     color: var(--light-gray);
                     margin: 5px 0 15px;
                 }
@@ -50,11 +50,11 @@
         .settings__theme {
             @include flex(flex-start, center, column);
             &-title {
-                @include font(18, 18, 600, auto);
+                @include font(18, 18, 600, normal);
                 color: var(--black-color);
             }
             &-desc {
-                @include font(16, 16, 500, auto);
+                @include font(16, 16, 500, normal);
                 color: var(--light-gray);
                 margin: 5px 0 15px 0;
             }

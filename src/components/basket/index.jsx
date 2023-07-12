@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import del_img from "../../assets/images/icons/delete.svg";
-import Product from "./product";
+import Product from "./Product";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAllCarts } from "../../redux/slices/cartSlice";
 import Order from "./Order";

@@ -1,0 +1,11 @@
+.products {
+    width: 100%;
+    @include flex(flex-start, center, unset);
+    padding: 50px;
+    &__container {
+        width: 100%;
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}

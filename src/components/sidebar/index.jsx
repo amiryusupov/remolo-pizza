@@ -11,16 +11,13 @@ const Sidebar = () => {
   const [active, setActive] = useState(0)
   const {isAuth} = useSelector((state) => state.auth)
   const {pathname} = useLocation()
-  const handleActive = () => {
-    setActive(!active)
-  }
   if(pathname === "/login") {
     return null
   }
   return (
   <div className={`sidebar${active ? " active" : ""}`}>
     <div className="sidebar__col">
-      <button className="sidebar__col-burger" onClick={handleActive}>
+      <button className="sidebar__col-burger" onClick={() => setActive(!active)}>
         <img src={burger__menu} alt="burger__menu" />
         </button>
         <div className="sidebar__col-logo-mobile">
@@ -29,7 +26,7 @@ const Sidebar = () => {
             <img src={sidebar_logo_text} alt="sidebar__logo" />
           </Link>
           <button className="sidebar__col-burger-mobile">
-            <img src={burger__menu2} alt="burger__menu" onClick={handleActive} />
+            <img src={burger__menu2} alt="burger__menu" onClick={() => setActive(!active)} />
           </button>
         </div>
             <SidebarItem sidebar__data={isAuth ? sidebarAdminData : sidebar__icons}/>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getProducts } from "../actions/categoriesAction"
+import { getProducts } from "../actions/productsAction"
 
 const initialState = {
     items: [],

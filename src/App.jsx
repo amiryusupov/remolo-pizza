@@ -14,7 +14,7 @@ function App() {
   const isCart = ["/", "/favourites"]
   const isAuth = useIsAuth()
   return (
-    <div className="app" data-colors={color}>
+    <div className="wrapper" data-colors={color}>
       <SkeletonTheme baseColor="#a6a6a6" highlightColor="#d2d2d2">
         <Sidebar />
         <Routes>
