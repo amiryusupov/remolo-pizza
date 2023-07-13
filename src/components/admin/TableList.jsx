@@ -20,8 +20,8 @@ function TableList({ columns, data, loading }) {
                 {columns.map((columnItem, k) => {
                   return (
                     <td key={k}>{Boolean(columnItem.dataKey) ? dataItem[columnItem.dataKey] : columnItem.render(dataItem)}</td>
-                  )
-                })}
+                    )
+                  })}
               </tr>
             )
           })}

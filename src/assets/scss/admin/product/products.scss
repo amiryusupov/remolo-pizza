@@ -1,7 +1,7 @@
 .products {
     width: 100%;
     @include flex(flex-start, center, unset);
-    padding: 50px;
+    padding: 30px;
     &__container {
         width: 100%;
         max-width: 1260px;

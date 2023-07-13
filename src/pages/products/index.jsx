@@ -31,7 +31,7 @@ function ProductsPage() {
       title: "Actions",
       render: (el) => {
         return (
-          <div className='admin-space'>
+          <div className='admin-actions'>
             <button className='admin-btn' onClick={() => console.log(el)}>Edit</button>
             <button className='admin-btn' onClick={() => console.log(el)}>Delete</button>
           </div>
@@ -48,12 +48,12 @@ function ProductsPage() {
   return (
     <div className="products">
       <div className="products__container">
-        <PageHeader title="Products" children={
-          <div className='admin-space'>
+        <PageHeader title="Products">
+          <div className='admin-actions'>
             <button className='admin-btn' onClick={handleModalOpen}>Add product</button>
             <button className='admin-btn'>Refresh</button>
           </div>
-        } />
+        </PageHeader>
         <TableList columns={tableColumns} data={items} loading={loading} />
         <Drawer open={modalOpen} close={handleModalClose} title={"Add product"}>
           <form>
@@ -72,7 +72,7 @@ function ProductsPage() {
             <div className="drawer-form__group">
               <div className="form-group">
                 <label htmlFor="description">Description</label>
-                <textarea name="description" cols="30" rows="10" placeholder="Enter product description" />
+                <textarea name="description" cols="30" rows="10" id="description" placeholder="Enter product description" />
               </div>
             </div>
             <input className="admin-btn" type="submit" value="submit" />

@@ -13,7 +13,7 @@ function Drawer({ title, open, close, children }) {
       <div className="drawer__panel">
         <div className="drawer__header">
           <span className="drawer__header-title">{title}</span>
-          <button className="drawer__header-close">X</button>
+          <button className="drawer__header-close" onClick={close}>X</button>
         </div>
         <div className="drawer__body">{children}</div>
       </div>

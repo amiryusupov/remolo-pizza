@@ -43,10 +43,10 @@
       margin-bottom: 20px;
 
       &-close {
-        @include font(16, 16, 500, normal);
+        @include font(16, 16, 800, normal);
         border: none;
-        padding: 5px;
-        border-radius: 5px;
+        padding: 5px 13px;
+        border-radius: 15px;
         cursor: pointer;
         color: var(--white-color);
         background-color: var(--violet-color);
@@ -118,6 +118,8 @@
 
             textarea {
               width: 95%;
+              resize: none;
+              font-family: var(--main-font);
 
               &::placeholder {
                 font-family: var(--main-font);
@@ -130,7 +132,7 @@
         .admin-btn {
           @include font(16, 16, 500, normal);
           border: none;
-          padding: 7px;
+          padding: 10px 30px;
           border-radius: 5px;
           cursor: pointer;
           color: var(--white-color);

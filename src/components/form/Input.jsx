@@ -14,6 +14,7 @@ export const Input = ({
       <input
         type={type}
         name={inputName}
+        id={labelInput}
         value={value}
         required
         placeholder={placeholder}
