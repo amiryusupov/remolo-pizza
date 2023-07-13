@@ -1,26 +1,151 @@
 .drawer {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-        
-    &-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
-    &-panel {
-        position: relative;
-        width: 900px;
-        height: 100%;
-        z-index: 2;
-        padding: 16px;
-        &-header {
-            width: 100%;
-            @include flex(center, space-between, row);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+  }
+
+  &__panel {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 700px;
+    height: 100%;
+    padding: 16px;
+    z-index: 30;
+    background-color: var(--white-color);
+    transition: all 0.3s ease-in-out;
+
+    .drawer__header {
+      width: 100%;
+      @include flex(center, space-between, row);
+      margin-bottom: 20px;
+
+      &-close {
+        @include font(16, 16, 500, normal);
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: var(--white-color);
+        background-color: var(--violet-color);
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: var(--violet-hover);
         }
+      }
     }
+
+    .drawer__body {
+      width: 100%;
+
+      form {
+        width: 100%;
+        @include flex(center, space-between, column);
+
+        .drawer-form__group {
+          width: 100%;
+          @include flex(center, center, row);
+
+          .form-group {
+            width: 100%;
+            @include flex(flex-start, flex-start, column);
+
+            label,
+            input {
+              @include font(14, 14, 400, normal);
+              font-family: var(--main-font);
+            }
+
+            label {
+              margin-bottom: 5px;
+            }
+
+            input,
+            textarea {
+              flex: 1 1 auto;
+              width: 90%;
+              text-overflow: ellipsis;
+              color: rgba(0, 0, 0, 0.88);
+              border: 1px solid #d9d9d9;
+              border-radius: 6px;
+              opacity: 0.8;
+              padding: 6px;
+              margin-bottom: 15px;
+              background-color: var(--white-color);
+              transition: all 0.2s;
+
+              &:hover {
+                border-color: #4096ff;
+                border-inline-end-width: 1px;
+              }
+
+              &:focus {
+                border-color: #4096ff;
+                box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+                border-inline-end-width: 1px;
+                outline: 0;
+              }
+            }
+
+            &:not(:last-child) {
+              input {
+                margin-right: 20px;
+              }
+            }
+
+            textarea {
+              width: 95%;
+
+              &::placeholder {
+                font-family: var(--main-font);
+              }
+            }
+          }
+
+        }
+
+        .admin-btn {
+          @include font(16, 16, 500, normal);
+          border: none;
+          padding: 7px;
+          border-radius: 5px;
+          cursor: pointer;
+          color: var(--white-color);
+          background-color: var(--violet-color);
+          transition: all 0.2s;
+
+          &:hover {
+            background-color: var(--violet-hover);
+          }
+        }
+      }
+    }
+  }
+
+  &.open &__panel {
+    right: 0;
+  }
 }

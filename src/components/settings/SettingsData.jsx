@@ -12,7 +12,6 @@ const initialActiveInput = {
 function SettingsData() {
   const [activeInput, setActiveInput] = useState(initialActiveInput);
   const { user } = useSelector((state) => state);
-  console.log(user);
   const dispatch = useDispatch();
   const handleActiveInput = (key) => {
     setActiveInput({
@@ -24,7 +23,6 @@ function SettingsData() {
     setActiveInput(initialActiveInput);
   };
   const handleChangeInput = (e, key) => {
-    console.log(e)
     dispatch(setUser({ key, value: e.target.value }));
   };
   return (

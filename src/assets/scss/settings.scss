@@ -23,7 +23,7 @@
             &__item {
                 @include flex(flex-start, center, column);
                 margin-bottom: 30px;
-                .input {
+                .form-group {
                     background-color: var(--sidebar-bg);
                     color: var(--light-gray);
                     input {
