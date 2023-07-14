@@ -2,16 +2,21 @@ import React, { useEffect, useState } from 'react'
 import PageHeader from '../../components/admin/PageHeader';
 import TableList from '../../components/admin/TableList';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../../redux/actions/productsAction';
+import { addProduct, getProducts } from '../../redux/actions/productsActions';
 import Drawer from '../../components/admin/Drawer';
 import { Input } from '../../components/form/Input';
+import { getCategories } from '../../redux/actions/categoriesAction';
+import SelectForm from '../../components/form/Select';
 
 function ProductsPage() {
   const { items, loading } = useSelector((state) => state.products)
   const [modalOpen, setModalOpen] = useState(false)
-
+  const { categories } = useSelector((state) => state)
+  // const {items: productItems, loading: productLoading} = products
+  const { items: categoryItems, loading: categoryLoading } = categories
   const dispatch = useDispatch()
   useEffect(() => {
+    dispatch(getCategories())
     dispatch(getProducts())
   }, [])
   const tableColumns = [
@@ -45,6 +50,22 @@ function ProductsPage() {
   const handleModalClose = () => {
     setModalOpen(false)
   }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const { target } = e
+    const obj = {}
+    for (let i = 0; i < target.elements.length-1; i++) {
+      obj[target.elements[i].name] = target.elements[i].value
+      console.log(obj);
+    }
+    const response = await addProduct(obj)
+    console.log(response);
+    if(response.id) {
+      handleModalClose()
+      dispatch(getProducts())
+    }
+  }
+  console.log(categoryItems);
   return (
     <div className="products">
       <div className="products__container">
@@ -56,7 +77,7 @@ function ProductsPage() {
         </PageHeader>
         <TableList columns={tableColumns} data={items} loading={loading} />
         <Drawer open={modalOpen} close={handleModalClose} title={"Add product"}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="drawer-form__group">
               <Input labelInput="name" labelName="Name" placeholder="Enter product name" inputName="name" />
               <Input labelInput="price" labelName="Price" type="number" placeholder="Enter product price" inputName="price" />
@@ -67,7 +88,7 @@ function ProductsPage() {
             </div>
             <div className="drawer-form__group">
               <Input labelInput="rating" labelName="Rating" type="number" placeholder="Enter product rating" inputName="rating" />
-              <Input labelInput="category" labelName="Category" type="textarea" placeholder="Enter product category" inputName="category" />
+              <SelectForm options={categoryItems.map((item) => ({ label: item.name, value: item.id }))} defaultValue={1} labelValue="category" labelName="Category" inputName="category" />
             </div>
             <div className="drawer-form__group">
               <div className="form-group">

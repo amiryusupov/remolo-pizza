@@ -68,7 +68,31 @@
         .drawer-form__group {
           width: 100%;
           @include flex(center, center, row);
+          select {
+            flex: 1 1 auto;
+            width: 90%;
+            text-overflow: ellipsis;
+            color: rgba(0, 0, 0, 0.88);
+            border: 1px solid #d9d9d9;
+            border-radius: 6px;
+            opacity: 0.8;
+            padding: 6px;
+            margin-bottom: 15px;
+            background-color: var(--white-color);
+            transition: all 0.2s;
 
+            &:hover {
+              border-color: #4096ff;
+              border-inline-end-width: 1px;
+            }
+
+            &:focus {
+              border-color: #4096ff;
+              box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+              border-inline-end-width: 1px;
+              outline: 0;
+            }
+          }
           .form-group {
             width: 100%;
             @include flex(flex-start, flex-start, column);
@@ -82,9 +106,8 @@
             label {
               margin-bottom: 5px;
             }
-
             input,
-            textarea {
+            textarea, select {
               flex: 1 1 auto;
               width: 90%;
               text-overflow: ellipsis;

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../redux/actions/categoriesAction";
 import CategorySkeleton from "../skeleton/CategorySkeleton";
 import ProductSkeleton from "../skeleton/ProductSkeleton";
-import { getProducts } from "../../redux/actions/productsAction";
+import { getProducts } from "../../redux/actions/productsActions";
 
 function Main() {
   const { categories, products } = useSelector((state) => state);

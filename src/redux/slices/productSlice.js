@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getProducts } from "../actions/productsAction"
+import { getProducts } from "../actions/productsActions"
 
 const initialState = {
     items: [],
@@ -14,8 +14,8 @@ const productsSlice = createSlice({
     extraReducers: {
         [getProducts.fulfilled.type]: (state, action) => {
             state.items = action.payload,
-            state.loading = false,
-            state.error = ""
+                state.loading = false,
+                state.error = ""
         },
         [getProducts.pending.type]: (state) => {
             state.loading = true
