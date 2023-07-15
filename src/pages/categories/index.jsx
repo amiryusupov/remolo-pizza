@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCategories } from "../../redux/actions/categoriesAction";
+import { addCategory, getCategories } from "../../redux/actions/categoriesAction";
 import PageHeader from "../../components/admin/PageHeader"
 import TableList from "../../components/admin/TableList"
 import Drawer from '../../components/admin/Drawer';
@@ -13,6 +13,21 @@ function CategoriesPage() {
   useEffect(() => {
     dispatch(getCategories())
   }, [])
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const { target } = e
+    const obj = {}
+    for (let i = 0; i < target.elements.length-1; i++) {
+      obj[target.elements[i].name] = target.elements[i].value
+      console.log(obj);
+    }
+    const response = await addCategory(obj)
+    console.log(response);
+    if(response.id) {
+      handleModalClose()
+      dispatch(getCategories())
+    }
+  }
   const tableColumns = [
     {
       title: "Name",
@@ -47,10 +62,10 @@ function CategoriesPage() {
         } />
         <TableList columns={tableColumns} data={items} loading={loading} />
         <Drawer open={modalOpen} close={handleModalClose} title={"Add category"}>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="drawer-form__group">
               <Input labelInput="name" labelName="Name" placeholder="Enter product name" inputName="name" />
-              <Input labelInput="icon" labelName="Icon" type="url" placeholder="Enter icon url" inputName="icon" />
+              <Input labelInput="icon" labelName="Icon" placeholder="Enter icon url" inputName="icon" />
             </div>
             <input className="admin-btn" type="submit" value="submit" />
           </form>

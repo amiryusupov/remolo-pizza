@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosUrl from "../../api";
-import { categoriesListUrl } from "../../utils/urls";
+import { categoriesListUrl, categoryAddUrl } from "../../utils/urls";
 
 export const getCategories = createAsyncThunk(
     'categories/getAllCategories',
@@ -9,3 +9,11 @@ export const getCategories = createAsyncThunk(
         return response.data;
     }
 )
+export const addCategory = async (data) => {
+    try {
+        const response = await axiosUrl.put(categoryAddUrl, data)
+        return response.data
+    } catch (error) {
+        return error
+    }
+}
