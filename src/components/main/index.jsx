@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import search from "../../assets/images/icons/search.svg";
-import Products from "./Products";
+import Products from "./product";
 import MainCategory from "./MainCategory";
 import burger__menu from "../../assets/images/icons/burger_menu.svg";
 import { useDispatch, useSelector } from "react-redux";

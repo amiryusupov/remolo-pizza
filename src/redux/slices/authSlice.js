@@ -40,7 +40,9 @@ const authSlice = createSlice({
       state.isAuth = true
       localStorage.setItem("accessToken", action.payload.access)
       localStorage.setItem("refreshToken", action.payload.refresh)
-      localStorage.setItem("auth", state.isAuth)
+      if(action.payload.access !== undefined) {
+        localStorage.setItem("auth", state.isAuth)
+      }
     }
   }
 });
